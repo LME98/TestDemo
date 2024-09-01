@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .item {
+            margin-bottom: 15px;
+        }
+        .item input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .item input[type="checkbox"], .item input[type="radio"] {
+            margin-right: 10px;
+        }
+        .item label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .links {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Online Shop</h1>
+    <form id="shopForm">
+        <div class="item">
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Enter item name">
+        </div>
+        <div class="item">
+            <label>Item Category:</label>
+            <input type="radio" id="category1" name="category" value="electronics"> Electronics
+            <label for="category1"></label>
+            <input type="radio" id="category2" name="category" value="clothing">Clothing
+            <label for="category2"></label>
+            <input type="radio" id="category3" name="category" value="home">Home & Kitchen
+            <label for="category3"></label>
+        </div>
+        <div class="item">
+            <label for="itemDescription">Item Description:</label>
+            <textarea id="itemDescription" name="itemDescription" rows="4" placeholder="Enter item description"></textarea>
+        </div>
+        <div class="item">
+            <label>Available Sizes:</label>
+            <input type="checkbox" id="sizeSmall" name="size" value="small">Small
+            <label for="sizeSmall"></label>
+            <input type="checkbox" id="sizeMedium" name="size" value="medium">Medium
+            <label for="sizeMedium"></label>
+            <input type="checkbox" id="sizeLarge" name="size" value="large">Large
+            <label for="sizeLarge"></label>
+        </div>
+        <div class="item">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" placeholder="Enter price">
+        </div>
+        <button type="submit">Add to Cart</button>
+    </form>
+    <div class="links">
+        <a href="#home">Home</a> |
+        <a href="#products">Products</a> |
+        <a href="#contact">Contact Us</a>
+    </div>
+</div>
+</body>
+</html>
