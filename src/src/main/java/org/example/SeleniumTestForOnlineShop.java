@@ -1,8 +1,14 @@
 package org.example;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
+
+import java.time.Duration;
 
 public class SeleniumTestForOnlineShop {
 
@@ -14,31 +20,29 @@ public class SeleniumTestForOnlineShop {
 
         driver.get("file:///C:\\Users\\Madhuri\\IdeaProjects\\TestDemo\\src\\src\\main\\java\\org\\example\\OnlineShop.html");
 
-        WebElement itemNameInput = driver.findElement(By.id("itemName"));
+        WebDriverWait wait = new WebDriverWait(driver,  Duration.ofSeconds(10));
+
+        WebElement itemNameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("itemName")));
         itemNameInput.sendKeys("Smartphone");
 
-        WebElement electronicsCategory = driver.findElement(By.id("category1"));
-        electronicsCategory.click();
+        Select itemCategoryDropdown = new Select(wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("itemCategory"))));
+        itemCategoryDropdown.selectByValue("electronics");
 
-        WebElement itemDescription = driver.findElement(By.id("itemDescription"));
+        WebElement itemDescription = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("itemDescription")));
         itemDescription.sendKeys("A high-quality smartphone with the latest features.");
 
-        WebElement sizeMedium = driver.findElement(By.id("sizeMedium"));
+        WebElement sizeMedium = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("sizeMedium")));
         sizeMedium.click();
 
-        WebElement sizeLarge = driver.findElement(By.id("sizeLarge"));
+        WebElement sizeLarge = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("sizeLarge")));
         sizeLarge.click();
 
-        WebElement priceInput = driver.findElement(By.id("price"));
+        WebElement priceInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("price")));
         priceInput.sendKeys("$699");
 
-//        WebElement addToCartButton = driver.findElement(By.xpath("//button[@type='submit']"));
-//        addToCartButtonrtButton.click();
-
-        WebElement homeLink = driver.findElement(By.linkText("Home"));
+        WebElement homeLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Home")));
         homeLink.click();
 
-//        driver.quit();
+        // driver.quit();
     }
-
 }

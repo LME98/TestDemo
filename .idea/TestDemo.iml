@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ch.exense.step.functions.plugins.selenium.controller.def" level="project" />
+    <orderEntry type="library" name="selenium-api-4.24.0-sources" level="project" />
   </component>
 </module>
